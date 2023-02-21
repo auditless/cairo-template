@@ -2,7 +2,7 @@ build: FORCE
 	scarb build
 
 clean: FORCE
-	rm -r target
+	scarb clean
 
 fmt: FORCE
 	scarb fmt
