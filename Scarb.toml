@@ -3,3 +3,8 @@ name = "cairo_template"
 version = "0.1.0"
 description = "A minimal template for developing with Cairo 1.0"
 homepage = "https://github.com/auditless/cairo-template"
+
+# Uncomment if you want to use dependencies
+# Note: currently testing doesn't work with dependencies
+# [dependencies]
+# quaireaux = { git = "https://github.com/keep-starknet-strange/quaireaux.git" }
