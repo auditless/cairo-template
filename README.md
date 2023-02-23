@@ -30,7 +30,7 @@ $ rustup override set stable && rustup update
 $ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git
 
 # Generate release binaries
-$ cargo build —all —release
+$ cargo build --all --release
 ```
 
 **NOTE: Keeping Cairo up to date**
