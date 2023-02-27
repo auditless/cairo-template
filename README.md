@@ -56,6 +56,24 @@ This will make available several binaries. The one we use is called `cairo-test`
 
 Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
 
+### Step 4: Setup Language Server
+
+#### VS Code Extension
+
+- Disable previous Cairo 0.x extension
+- Install the Cairo 1 extension for proper syntax highlighting and code navigation.
+Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/README.md).
+
+#### Cairo Language Server
+
+From [Step 1](#step-1-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
+
+```bash
+$ which cairo-language-server | pbcopy
+```
+
+Update the `languageServerPath` of the Cairo 1.0 extension by pasting the path.
+
 ## How to use this template
 
 First you will need to clone the repository or click the `Use this template` button
@@ -95,24 +113,6 @@ Format the Cairo source code (using Scarb):
 ```bash
 $ make fmt
 ```
-
-### Step 4: Setup Language Server
-
-#### VS Code Extension
-
-- Disable previous Cairo 0.x extension
-- Install the Cairo 1 extension for proper syntax highlighting and code navigation.
-Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/README.md).
-
-#### Cairo Language Server
-
-From [Step 1](#step-1-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will output the path, if it doesn't exist it will be built.
-
-```bash
-$ make language-server
-```
-
-Update the `languageServerPath` of the Cairo 1.0 extension pointing to the path to the binary.
 
 ## Thanks to
 
