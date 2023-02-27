@@ -96,6 +96,23 @@ Format the Cairo source code (using Scarb):
 $ make fmt
 ```
 
+## Language Server
+
+### VS Code Extension
+
+Install the Cairo 1 extension for proper syntax highlighting and code navigation.
+Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/README.md).
+
+### Cairo Language Server
+
+Download the `cairo-language-server` binary from the latest release
+
+```bash
+$ make language-server
+```
+
+Update the `languageServerPath` of the Cairo 1.0 extension pointing to the path to the binary.
+
 ## Thanks to
 
 - The [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) team for coming up with
