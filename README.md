@@ -27,7 +27,7 @@ For everyone, else, we recommend compiling Cairo from source like so:
 $ rustup override set stable && rustup update
 
 # Clone the Cairo compiler in $HOME/Bin
-$ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git
+$ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git && cd cairo
 
 # Generate release binaries
 $ cargo build --all --release
@@ -39,13 +39,13 @@ Now that your Cairo compiler is in a cloned repository, all you will need to do
 is pull the latest changes and rebuild as follows:
 
 ```bash
-$ cd ~/Bin && git fetch && git pull && cargo build --all --release
+$ cd ~/Bin/cairo && git fetch && git pull && cargo build --all --release
 ```
 
 ### Step 2: Add Cairo 1.0 executables to your path
 
 ```bash
-export PATH="$HOME/Bin/cairo/target/release:$PATH”
+export PATH="$HOME/Bin/cairo/target/release:$PATH"
 ```
 
 **NOTE: If installing from a Linux binary, adapt the destination path accordingly.**
@@ -96,16 +96,17 @@ Format the Cairo source code (using Scarb):
 $ make fmt
 ```
 
-## Language Server
+### Step 4: Setup Language Server
 
-### VS Code Extension
+#### VS Code Extension
 
-Install the Cairo 1 extension for proper syntax highlighting and code navigation.
+- Disable previous Cairo 0.x extension
+- Install the Cairo 1 extension for proper syntax highlighting and code navigation.
 Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/blob/main/vscode-cairo/README.md).
 
-### Cairo Language Server
+#### Cairo Language Server
 
-Download the `cairo-language-server` binary from the latest release
+From [Step 1](#step-1-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will output the path, if it doesn't exist it will be built.
 
 ```bash
 $ make language-server
