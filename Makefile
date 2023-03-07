@@ -1,6 +1,9 @@
 build: FORCE
 	scarb build
 
+sierra: FORCE
+	cairo-compile . -r
+
 clean: FORCE
 	scarb clean
 

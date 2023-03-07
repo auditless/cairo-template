@@ -120,6 +120,14 @@ Format the Cairo source code (using Scarb):
 $ make fmt
 ```
 
+### Sierra (advanced)
+
+View the compiled Sierra output of your Cairo code:
+
+```bash
+$ make sierra
+```
+
 ## Thanks to
 
 - The [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) team for coming up with
