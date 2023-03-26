@@ -2,7 +2,7 @@
 
 [Built with **`auditless/cairo-template`**](https://github.com/auditless/cairo-template)
 
-A minimal template for building smart contracts with Cairo 1.0
+A minimal template for building smart contracts with Cairo 1.0. Current template supports version `v1.0.0-alpha.6`.
 using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) project defaults.
 
 ## How it works
@@ -27,7 +27,7 @@ For everyone, else, we recommend compiling Cairo from source like so:
 $ rustup override set stable && rustup update
 
 # Clone the Cairo compiler in $HOME/Bin
-$ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git && cd cairo
+$ mkdir -p ~/Bin && cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git && cd cairo
 
 # Generate release binaries
 $ cargo build --all --release

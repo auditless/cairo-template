@@ -1,6 +1,6 @@
 // use quaireaux::math::fibonacci;
 
-fn add(a: felt, b: felt) -> felt {
+fn add(a: felt252, b: felt252) -> felt252 {
     a + b
 }
 
