@@ -11,7 +11,8 @@ using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) projec
 - Uses the [`cairo-test-runner`](https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-test-runner/README.md) binary for running tests
 - Built as a [Scarb](https://github.com/software-mansion/scarb) package for reusability and uses Scarb dependencies for libraries
 - Has reproducible builds using GitHub Actions
-- Includes a standard Makefile for commonly used commands
+- Uses Scarb scripts natively for custom commands
+- Includes advanced debugging views like the Sierra intermediate representation
 
 ## Installing dependencies
 
@@ -95,7 +96,7 @@ The Cairo template currently supports building and testing contracts.
 Build the contracts.
 
 ```bash
-$ make build
+$ scarb build
 ```
 
 ### Test
@@ -103,7 +104,7 @@ $ make build
 Run the tests in `src/test`:
 
 ```bash
-$ make test
+$ scarb run test
 ```
 
 ### Format
@@ -111,7 +112,7 @@ $ make test
 Format the Cairo source code (using Scarb):
 
 ```bash
-$ make fmt
+$ scarb fmt
 ```
 
 ### Sierra (advanced)
@@ -119,7 +120,7 @@ $ make fmt
 View the compiled Sierra output of your Cairo code:
 
 ```bash
-$ make sierra
+$ scarb run sierra
 ```
 
 ## Thanks to
