@@ -30,6 +30,14 @@ $ rustup override set stable && rustup update
 # Clone the Cairo compiler in $HOME/Bin
 $ cd ~/Bin && git clone git@github.com:starkware-libs/cairo.git && cd cairo
 
+# OPTIONAL/RECOMMENDED: If you want to install a specific version of the compiler
+# Fetch all tags (versions)
+git fetch --all --tags
+# View tags (you can also do this in the cairo compiler repository)
+git describe --tags `git rev-list --tags`
+# Checkout the version you want
+git checkout tags/v1.0.0-alpha.6
+
 # Generate release binaries
 $ cargo build --all --release
 ```
