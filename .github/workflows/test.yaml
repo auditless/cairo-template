@@ -45,12 +45,8 @@ jobs:
           if [[ ! -d $HOME/.protostar/dist/protostar ]]; then
             curl -L https://raw.githubusercontent.com/software-mansion/protostar/master/install.sh | bash -s -- -v $PROTOSTAR_VERSION
           fi
-          echo "export PATH=\"\$PATH:$HOME/.protostar/dist/protostar\"" >> $GITHUB_PATH
-          source $GITHUB_PATH          
-          protostar -v
+          echo "$HOME/.protostar/dist/protostar" >> $GITHUB_PATH
           
       - name: Test the code
-        run: |
-          echo "export PATH=\"\$PATH:$HOME/.protostar/dist/protostar\"" >> $GITHUB_PATH
-          source $GITHUB_PATH     
+        run: | 
           protostar test-cairo1
