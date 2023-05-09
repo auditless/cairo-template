@@ -8,7 +8,7 @@ using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) projec
 ## How it works
 
 - No submodules, forks or other heavy machinery
-- Uses the [`cairo-test-runner`](https://github.com/starkware-libs/cairo/blob/main/crates/cairo-lang-test-runner/README.md) binary for running tests
+- Uses [`protostar`](https://github.com/software-mansion/protostar) toolchain for running tests
 - Built as a [Scarb](https://github.com/software-mansion/scarb) package for reusability and uses Scarb dependencies for libraries
 - Has reproducible builds using GitHub Actions
 - Uses Scarb scripts natively for custom commands
@@ -16,7 +16,18 @@ using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) projec
 
 ## Installing dependencies
 
-### Step 1: Install Cairo 1.0 (guide by [Abdel](https://github.com/abdelhamidbakhta))
+### Step 1: Install the Cairo package manager Scarb
+
+Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
+
+### Step 2: Install the Protostar toolchain
+
+Follow the installation guide in [Protostar's Repository](https://github.com/software-mansion/protostar).
+
+
+### Step 3: Install Cairo 1.0 (guide by [Abdel](https://github.com/abdelhamidbakhta))
+
+**NOTE: By installing Scarb, you already have an accompanying Cairo 1.0 version which can be viewed by running `$ scarb --version`. This installation step is included to allow you maintain an independent version of Cairo. This step will also prove useful when setting up the language server in [Step 5](#step-5-setup-language-server).**
 
 If you are on an x86 Linux system and able to use the release binary,
 you can download Cairo here https://github.com/starkware-libs/cairo/releases.
@@ -51,7 +62,7 @@ is pull the latest changes and rebuild as follows:
 $ cd ~/Bin/cairo && git fetch && git pull && cargo build --all --release
 ```
 
-### Step 2: Add Cairo 1.0 executables to your path
+### Step 4: Add Cairo 1.0 executables to your path
 
 ```bash
 export PATH="$HOME/Bin/cairo/target/release:$PATH"
@@ -61,11 +72,7 @@ export PATH="$HOME/Bin/cairo/target/release:$PATH"
 
 This will make available several binaries. The one we use is called `cairo-test`.
 
-### Step 3: Install the Cairo package manager Scarb
-
-Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
-
-### Step 4: Setup Language Server
+### Step 5: Setup Language Server
 
 #### VS Code Extension
 
@@ -75,7 +82,7 @@ Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/b
 
 #### Cairo Language Server
 
-From [Step 1](#step-1-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
+From [Step 3](#step-3-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
 
 ```bash
 $ which cairo-language-server | pbcopy
@@ -94,7 +101,10 @@ Next, you will want to update the configuration files with the name of your proj
 ├── .cairo_project.toml
 └── .Scarb.toml
 ```
-
+Also, if you're using a different `protostar` version, you'll want to update the version in the configuration file as well
+```
+└── .protostar.toml
+```
 ## Working with your project
 
 The Cairo template currently supports building and testing contracts.
@@ -123,12 +133,18 @@ Format the Cairo source code (using Scarb):
 $ scarb fmt
 ```
 
-### Sierra (advanced)
+### Sierra and Casm (advanced)
+The Sierra output of your cairo code is automatically built by scarb when you run `$ scarb build`. 
 
-View the compiled Sierra output of your Cairo code:
-
-```bash
-$ scarb run sierra
+To change this behaviour, add the following code to the `[lib]` section of your `Scarb.toml` configuration file
+```
+    [lib]
+    sierra = false
+```
+Similarly, to generate casm (Cairo assembly), add the following code to the `[lib]` section of your `Scarb.toml` configuration file
+```
+    [lib]
+    casm = true
 ```
 
 ## Thanks to
