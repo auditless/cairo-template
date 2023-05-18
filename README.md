@@ -18,7 +18,7 @@ using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) projec
 
 ### Step 1: Install the Cairo package manager Scarb
 
-Follow the installation guide in [Scarb's Repository](https://github.com/software-mansion/scarb).
+Follow the installation guide in [Scarb's documentation](https://docs.swmansion.com/scarb).
 
 ### Step 2: Install the Protostar toolchain
 
@@ -82,13 +82,9 @@ Just follow the steps indicated [here](https://github.com/starkware-libs/cairo/b
 
 #### Cairo Language Server
 
-From [Step 3](#step-3-install-cairo-10-guide-by-abdel), the `cairo-language-server` binary should be built and executing this command will copy its path into your clipboard.
-
-```bash
-$ which cairo-language-server | pbcopy
-```
-
-Update the `languageServerPath` of the Cairo 1.0 extension by pasting the path.
+The Cairo Language Server now comes bundled with the Scarb package manger distribution.
+You can make sure it is available in your system by running `$ scarb commands`.
+The output should include a line starting with `cairo-language-server`.
 
 ## How to use this template
 

@@ -3,8 +3,8 @@ name: Tests
 on: [push, pull_request]
 
 env:
-  SCARB_VERSION: v0.2.0-alpha.1
-  PROTOSTAR_VERSION: 0.10.0
+  SCARB_VERSION: v0.2.1
+  PROTOSTAR_VERSION: 0.11.0
 
 jobs:
   main:
@@ -49,4 +49,4 @@ jobs:
           
       - name: Test the code
         run: | 
-          protostar test-cairo1
+          scarb run test
