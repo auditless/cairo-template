@@ -3,7 +3,7 @@
 [Built with **`auditless/cairo-template`**](https://github.com/auditless/cairo-template)
 
 A minimal template for building smart contracts with Cairo 1.0
-using the [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) project defaults.
+using the [alexandria](https://github.com/keep-starknet-strange/alexandria) project defaults.
 
 ## How it works
 
@@ -130,7 +130,7 @@ $ scarb fmt
 ```
 
 ### Sierra and Casm (advanced)
-The Sierra output of your cairo code is automatically built by scarb when you run `$ scarb build`. 
+The Sierra output of your cairo code is automatically built by scarb when you run `$ scarb build`.
 
 To change this behaviour, add the following code to the `[lib]` section of your `Scarb.toml` configuration file
 ```
@@ -145,7 +145,7 @@ Similarly, to generate casm (Cairo assembly), add the following code to the `[li
 
 ## Thanks to
 
-- The [Quaireaux](https://github.com/keep-starknet-strange/quaireaux) team for coming up with
+- The [alexandria](https://github.com/keep-starknet-strange/alexandria) team for coming up with
 this configuration and especially [Abdel](https://github.com/abdelhamidbakhta) for helping me with Cairo 1.0 installation
 - [Paul Berg](https://github.com/PaulRBerg) and the [foundry-template](https://github.com/paulrberg/foundry-template) project which served as inspiration
 - Last but not least, the StarkWare team for building the first smart contract language that is a joy to use
