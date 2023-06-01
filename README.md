@@ -91,10 +91,9 @@ The output should include a line starting with `cairo-language-server`.
 First you will need to clone the repository or click the `Use this template` button
 at the top of the page to create a new repository based on the template.
 
-Next, you will want to update the configuration files with the name of your project:
+Next, you will want to update the configuration file with the name of your project:
 
 ```
-├── .cairo_project.toml
 └── .Scarb.toml
 ```
 Also, if you're using a different `protostar` version, you'll want to update the version in the configuration file as well
